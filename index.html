@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YDOIA — Solicitud de Auditoría Estratégica 360° (Sin Coste)</title>
+  <meta name="description" content="Solicita tu Auditoría Estratégica YDOIA 360° gratuita: Mapa de calor Google Maps (Grid 3x3 a 9x9), visibilidad en ChatGPT/Gemini, Web Preview CRO y diagnóstico de IA Empática 24/7." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Fraunces:ital,opsz,wght@1,9..144,400;1,9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --petrol: #014C6B;
+      --petrol-2: #0B5F82;
+      --gold: #FDC844;
+      --ink: #0B0E12;
+      --ink-2: #12171E;
+      --white: #FBFBFB;
+      --white-2: #F2F4F7;
+      --muted: rgba(251, 251, 251, 0.68);
+      --muted-d: #525860;
+      --line: rgba(251, 251, 251, 0.12);
+      --line-d: rgba(11, 14, 18, 0.1);
+      --head: 'Sora', -apple-system, BlinkMacSystemFont, sans-serif;
+      --serif: 'Fraunces', Georgia, serif;
+      --sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --mono: 'JetBrains Mono', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--ink);
+      background-image:
+        radial-gradient(circle at 18% 8%, rgba(1, 76, 107, 0.42) 0%, transparent 45%),
+        radial-gradient(circle at 84% 16%, rgba(11, 95, 130, 0.28) 0%, transparent 42%),
+        linear-gradient(180deg, #0b0e12 0%, #090b0f 100%);
+      color: var(--white);
+      font-family: var(--sans);
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* TOP BAR */
+    .topbar {
+      position: sticky;
+      top: 14px;
+      z-index: 90;
+      width: min(1140px, calc(100vw - 28px));
+      margin: 14px auto 0;
+      padding: 10px 14px 10px 22px;
+      border-radius: 999px;
+      background: rgba(14, 18, 24, 0.82);
+      backdrop-filter: blur(20px) saturate(160%);
+      border: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      box-shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.65);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--white);
+    }
+
+    .brand img {
+      height: 24px;
+      width: auto;
+      display: block;
+    }
+
+    .brand-tag {
+      font: 600 11px var(--mono);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold);
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(253, 200, 68, 0.1);
+      border: 1px solid rgba(253, 200, 68, 0.28);
+    }
+
+    .top-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .geo-switch {
+      display: inline-flex;
+      background: rgba(251, 251, 251, 0.06);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 3px;
+    }
+
+    .geo-switch button {
+      background: transparent;
+      border: 0;
+      color: var(--muted);
+      font: 600 11.5px var(--mono);
+      padding: 6px 12px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .geo-switch button.active {
+      background: var(--gold);
+      color: var(--ink);
+    }
+
+    /* WRAPPER */
+    .wrap {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* HERO HEADER */
+    .hero-head {
+      text-align: center;
+      padding: 56px 0 42px;
+      position: relative;
+    }
+
+    .prestige-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 16px;
+      border-radius: 999px;
+      background: rgba(20, 26, 34, 0.78);
+      border: 1px solid rgba(253, 200, 68, 0.34);
+      font-size: 12.5px;
+      color: rgba(251, 251, 251, 0.9);
+      margin-bottom: 22px;
+      box-shadow: 0 12px 32px -10px rgba(0, 0, 0, 0.5);
+    }
+
+    .prestige-pill .stars {
+      color: var(--gold);
+      letter-spacing: 2px;
+      font-size: 13.5px;
+    }
+
+    .hero-head h1 {
+      font-family: var(--head);
+      font-size: clamp(32px, 4.8vw, 58px);
+      font-weight: 700;
+      line-height: 1.04;
+      letter-spacing: -0.04em;
+      max-width: 900px;
+      margin: 0 auto 18px;
+    }
+
+    .serif {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 400;
+      color: var(--gold);
+    }
+
+    .hero-head p.lead {
+      font-size: clamp(16px, 1.35vw, 18.5px);
+      line-height: 1.6;
+      color: var(--muted);
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    /* MAIN GRID */
+    .audit-grid {
+      display: grid;
+      grid-template-columns: 0.92fr 1.08fr;
+      gap: 36px;
+      align-items: start;
+      padding-bottom: 72px;
+    }
+
+    /* LEFT COLUMN: VALUE PROPOSITION & DELIVERABLES */
+    .deliverables-card {
+      background: linear-gradient(160deg, rgba(20, 28, 36, 0.88) 0%, rgba(12, 16, 22, 0.95) 100%);
+      border: 1px solid rgba(251, 251, 251, 0.13);
+      border-top: 3px solid var(--gold);
+      border-radius: 30px;
+      padding: 36px 32px;
+      box-shadow: 0 32px 70px -28px rgba(0, 0, 0, 0.7);
+      position: sticky;
+      top: 86px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font: 600 11.5px var(--mono);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 10px var(--gold);
+    }
+
+    .deliverables-card h2 {
+      font-family: var(--head);
+      font-size: clamp(24px, 2.5vw, 31px);
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      margin-bottom: 14px;
+    }
+
+    .deliverables-card > p {
+      font-size: 14.5px;
+      line-height: 1.6;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+
+    .deliv-list {
+      list-style: none;
+      display: grid;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+
+    .deliv-item {
+      display: grid;
+      grid-template-columns: 40px 1fr;
+      gap: 14px;
+      align-items: start;
+      padding: 15px 16px;
+      border-radius: 18px;
+      background: rgba(251, 251, 251, 0.035);
+      border: 1px solid rgba(251, 251, 251, 0.08);
+    }
+
+    .deliv-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background: radial-gradient(circle at 30% 30%, rgba(253, 200, 68, 0.25), rgba(1, 76, 107, 0.7));
+      border: 1px solid rgba(253, 200, 68, 0.35);
+      color: var(--gold);
+      font: 700 14px var(--head);
+    }
+
+    .deliv-item strong {
+      display: block;
+      font-family: var(--head);
+      font-size: 15px;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+
+    .deliv-item span {
+      display: block;
+      font-size: 13.5px;
+      line-height: 1.5;
+      color: var(--muted);
+    }
+
+    .assistant-preview {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 18px;
+      border-radius: 20px;
+      background: linear-gradient(90deg, rgba(1, 76, 107, 0.42), rgba(18, 24, 32, 0.85));
+      border: 1px solid rgba(253, 200, 68, 0.28);
+    }
+
+    .assistant-preview img {
+      width: 54px;
+      height: 54px;
+      border-radius: 16px;
+      object-fit: cover;
+      object-position: center 15%;
+      border: 1.5px solid var(--gold);
+      flex: none;
+    }
+
+    .assistant-preview div strong {
+      display: block;
+      font-size: 14px;
+      color: var(--white);
+    }
+
+    .assistant-preview div small {
+      display: block;
+      font-size: 12.5px;
+      color: var(--muted);
+      margin-top: 2px;
+      line-height: 1.45;
+    }
+
+    /* RIGHT COLUMN: FORM CARD */
+    .form-card {
+      background: var(--white);
+      color: var(--ink);
+      border-radius: 32px;
+      padding: 40px 38px;
+      box-shadow: 0 40px 90px -30px rgba(1, 76, 107, 0.55);
+      border: 1.5px solid rgba(1, 76, 107, 0.18);
+      border-top: 5px solid var(--petrol);
+    }
+
+    .form-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .form-head .step-badge {
+      font: 600 11px var(--mono);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--petrol);
+      background: rgba(1, 76, 107, 0.08);
+      padding: 5px 11px;
+      border-radius: 999px;
+    }
+
+    .form-head .time-badge {
+      font: 600 11px var(--mono);
+      color: #0d7a43;
+      background: rgba(13, 122, 67, 0.1);
+      padding: 5px 11px;
+      border-radius: 999px;
+    }
+
+    .form-card h3 {
+      font-family: var(--head);
+      font-size: clamp(23px, 2.4vw, 29px);
+      letter-spacing: -0.03em;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+
+    .form-card .sub {
+      font-size: 14.5px;
+      color: var(--muted-d);
+      margin-bottom: 24px;
+      line-height: 1.5;
+    }
+
+    .field-group {
+      margin-bottom: 20px;
+    }
+
+    .field-label {
+      display: block;
+      font: 700 11.5px var(--mono);
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: #3c4248;
+      margin-bottom: 8px;
+    }
+
+    .field-label span.req {
+      color: var(--petrol);
+    }
+
+    /* CHIPS */
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .chip-btn {
+      padding: 9px 14px;
+      border-radius: 999px;
+      border: 1.5px solid rgba(11, 14, 18, 0.13);
+      background: var(--white-2);
+      color: var(--ink);
+      font: 600 13px var(--sans);
+      cursor: pointer;
+      transition: all 0.18s ease;
+    }
+
+    .chip-btn:hover {
+      border-color: var(--petrol);
+    }
+
+    .chip-btn.active {
+      background: var(--petrol);
+      color: var(--white);
+      border-color: var(--petrol);
+      box-shadow: 0 8px 20px -6px rgba(1, 76, 107, 0.45);
+    }
+
+    /* INPUTS */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .input-ctrl,
+    .select-ctrl,
+    .textarea-ctrl {
+      width: 100%;
+      padding: 13px 15px;
+      border-radius: 14px;
+      border: 1.5px solid rgba(11, 14, 18, 0.14);
+      background: #ffffff;
+      color: var(--ink);
+      font: 500 14.5px var(--sans);
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .input-ctrl:focus,
+    .select-ctrl:focus,
+    .textarea-ctrl:focus {
+      border-color: var(--petrol);
+      box-shadow: 0 0 0 3.5px rgba(1, 76, 107, 0.13);
+    }
+
+    .textarea-ctrl {
+      min-height: 78px;
+      resize: vertical;
+    }
+
+    /* PRIVACY CHECK */
+    .privacy-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin: 18px 0 22px;
+      font-size: 12.5px;
+      color: var(--muted-d);
+      line-height: 1.45;
+    }
+
+    .privacy-row input {
+      margin-top: 3px;
+      accent-color: var(--petrol);
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+    }
+
+    /* SUBMIT BUTTON */
+    .submit-btn {
+      width: 100%;
+      padding: 17px 24px;
+      border-radius: 999px;
+      border: 0;
+      background: var(--gold);
+      color: var(--ink);
+      font: 700 16px var(--head);
+      letter-spacing: -0.01em;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      box-shadow: 0 18px 40px -12px rgba(253, 200, 68, 0.65);
+      transition: transform 0.22s, box-shadow 0.22s, background 0.22s;
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      background: #ffd25a;
+      box-shadow: 0 24px 48px -12px rgba(253, 200, 68, 0.8);
+    }
+
+    .submit-btn:disabled {
+      opacity: 0.65;
+      cursor: wait;
+    }
+
+    /* SUCCESS STATE */
+    .success-box {
+      display: none;
+      text-align: center;
+      padding: 16px 6px;
+    }
+
+    .success-box.show {
+      display: block;
+    }
+
+    .ok-icon {
+      width: 68px;
+      height: 68px;
+      border-radius: 50%;
+      background: rgba(13, 122, 67, 0.12);
+      color: #0d7a43;
+      display: grid;
+      place-items: center;
+      font-size: 32px;
+      margin: 0 auto 18px;
+      border: 2px solid rgba(13, 122, 67, 0.28);
+    }
+
+    .summary-card {
+      text-align: left;
+      background: var(--white-2);
+      border: 1px solid var(--line-d);
+      border-radius: 18px;
+      padding: 18px 20px;
+      margin: 20px 0;
+      font-size: 13.5px;
+      line-height: 1.65;
+      color: #2c3238;
+    }
+
+    .action-stack {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .wa-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 15px 22px;
+      border-radius: 999px;
+      background: #128C7E;
+      color: #fff;
+      text-decoration: none;
+      font: 700 15px var(--head);
+      transition: transform 0.2s;
+    }
+
+    .wa-btn:hover {
+      transform: translateY(-2px);
+      background: #0f7a6d;
+    }
+
+    .secondary-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px 20px;
+      border-radius: 999px;
+      background: var(--ink);
+      color: var(--white);
+      border: 0;
+      text-decoration: none;
+      font: 600 13.5px var(--sans);
+      cursor: pointer;
+    }
+
+    /* COMPLIANCE STRIP */
+    .seal-strip {
+      margin: 10px 0 64px;
+      padding: 24px 28px;
+      border-radius: 24px;
+      background: rgba(251, 251, 251, 0.03);
+      border: 1px solid rgba(251, 251, 251, 0.12);
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .seal-card {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: rgba(12, 15, 19, 0.78);
+      border: 1px solid rgba(251, 251, 251, 0.09);
+    }
+
+    .seal-emblem {
+      width: 40px;
+      height: 40px;
+      border-radius: 11px;
+      flex: none;
+      display: grid;
+      place-items: center;
+      background: radial-gradient(circle at 30% 30%, rgba(1, 76, 107, 0.65), rgba(14, 18, 24, 0.95));
+      border: 1px solid rgba(251, 251, 251, 0.16);
+      color: #FBFBFB;
+    }
+
+    .seal-card strong {
+      display: block;
+      font: 600 12.5px var(--head);
+      color: var(--white);
+    }
+
+    .seal-card span {
+      display: block;
+      font: 500 10.5px var(--mono);
+      color: var(--muted);
+    }
+
+    @media (max-width: 940px) {
+      .audit-grid {
+        grid-template-columns: 1fr;
+      }
+      .deliverables-card {
+        position: static;
+        order: 2;
+      }
+      .form-card {
+        order: 1;
+        padding: 28px 22px;
+      }
+      .grid-2,
+      .seal-strip {
+        grid-template-columns: 1fr;
+      }
+      .brand-tag {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP NAVIGATION -->
+  <nav class="topbar">
+    <a href="https://ydoia.com" class="brand">
+      <img src="./logo-blanco.png" alt="YDOIA" />
+      <span class="brand-tag">Growth Partner & IA Systems</span>
+    </a>
+    <div class="top-right">
+      <div class="geo-switch" role="group" aria-label="Seleccionar país">
+        <button type="button" id="btn-es" class="active" onclick="setCountry('es')">🇪🇸 España</button>
+        <button type="button" id="btn-mx" onclick="setCountry('mx')">🇲🇽 México</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <!-- HERO -->
+    <header class="hero-head">
+      <div class="prestige-pill">
+        <span class="stars">★★★★★</span>
+        <b>Auditoría Estratégica 360° Sin Coste</b>
+        <span>·</span>
+        <span>Estándar Europeo (EU AI Act)</span>
+      </div>
+      <h1>
+        Descubre cuántas citas y clientes pierdes hoy en <span class="serif">Google Maps, Web e IA.</span>
+      </h1>
+      <p class="lead">
+        Completa los datos de tu clínica, centro o empresa en menos de 60 segundos. Nuestro equipo de ingeniería analizará tu posición real frente a tus competidores y preparará tu Dossier 360° personalizado.
+      </p>
+    </header>
+
+    <!-- SPLIT LAYOUT -->
+    <section class="audit-grid">
+      <!-- LEFT: QUÉ INCLUYE LA AUDITORÍA -->
+      <aside class="deliverables-card">
+        <span class="eyebrow">Entregable valorado en 490 € · 100% Gratuito</span>
+        <h2>¿Qué incluye tu Dossier de Diagnóstico <span class="serif">YDOIA 360°</span>?</h2>
+        <p>
+          Analizamos tu negocio con tecnología propia antes de nuestra sesión ejecutiva de 20 minutos para ir directo a los resultados:
+        </p>
+
+        <ul class="deliv-list">
+          <li class="deliv-item">
+            <div class="deliv-icon">D</div>
+            <div>
+              <strong>1. Mapa de Calor Google Maps (Grid 3×3 a 9×9)</strong>
+              <span>Calculamos tu Índice VCL (%) calle a calle frente a los competidores de tu código postal o ciudad.</span>
+            </div>
+          </li>
+          <li class="deliv-item">
+            <div class="deliv-icon">IA</div>
+            <div>
+              <strong>2. Auditoría GEO en ChatGPT, Gemini y Perplexity</strong>
+              <span>Qué responden hoy los motores de inteligencia artificial cuando un cliente busca tu especialidad en tu zona.</span>
+            </div>
+          </li>
+          <li class="deliv-item">
+            <div class="deliv-icon">E</div>
+            <div>
+              <strong>3. Diagnóstico Web CRO & Propuesta de Conversión</strong>
+              <span>Detectamos las barreras de tu web actual que hacen que hasta el 78% de las visitas salga sin agendar.</span>
+            </div>
+          </li>
+          <li class="deliv-item">
+            <div class="deliv-icon">F</div>
+            <div>
+              <strong>4. Proyección de Recepción IA Empática 24/7</strong>
+              <span>Estimación real de citas y facturación mensual recuperable atendiendo WhatsApp, voz y redes en &lt; 2,4 segundos.</span>
+            </div>
+          </li>
+        </ul>
+
+        <div class="assistant-preview">
+          <img src="./ydoia-profile-dark.png" alt="YDOIA" />
+          <div>
+            <strong>Exclusividad Territorial Garantizada</strong>
+            <small>Solo auditamos e implantamos el ecosistema D·E·F en un número limitado de centros por zona geográfica.</small>
+          </div>
+        </div>
+      </aside>
+
+      <!-- RIGHT: FORMULARIO ACTIVO -->
+      <div class="form-card">
+        <div id="form-container">
+          <div class="form-head">
+            <span class="step-badge" id="region-badge">🇪🇸 Operativa España · Paso Único</span>
+            <span class="time-badge">⚡ Toma 60 segundos</span>
+          </div>
+          <h3>Solicita tu Auditoría Gratuita</h3>
+          <p class="sub">
+            Introduce los datos de tu centro o negocio para que nuestro sistema ejecute el rastreo local y de IA antes de contactarte:
+          </p>
+
+          <form id="audit-form" onsubmit="handleAuditSubmit(event)">
+            <!-- 1. SECTOR -->
+            <div class="field-group">
+              <label class="field-label">1. ¿Cuál es el sector de tu centro o negocio? <span class="req">*</span></label>
+              <div class="chips" id="sector-chips">
+                <button type="button" class="chip-btn active" onclick="selectSector(this, 'Clínica Dental')">🦷 Clínica Dental</button>
+                <button type="button" class="chip-btn" onclick="selectSector(this, 'Clínica Médica / Estética / Salud')">⚕️ Clínica Médica / Estética</button>
+                <button type="button" class="chip-btn" onclick="selectSector(this, 'Educación / Academia / Formación')">🎓 Educación / Academia</button>
+                <button type="button" class="chip-btn" onclick="selectSector(this, 'Despacho Legal / Fiscal / Consultoría')">⚖️ Legal / Consultoría</button>
+                <button type="button" class="chip-btn" onclick="selectSector(this, 'Inmobiliaria / Arquitectura / Reformas')">🏛️ Real Estate / Reformas</button>
+                <button type="button" class="chip-btn" onclick="selectSector(this, 'Empresa B2B / Industrial / Servicios')">🏢 Empresa B2B / Otro Sector</button>
+              </div>
+              <input type="hidden" name="sector" id="input-sector" value="Clínica Dental" />
+            </div>
+
+            <!-- 2. PRIORIDAD -->
+            <div class="field-group">
+              <label class="field-label">2. ¿Qué objetivo deseas priorizar ahora mismo? <span class="req">*</span></label>
+              <div class="chips" id="goal-chips">
+                <button type="button" class="chip-btn active" onclick="selectGoal(this, 'Ecosistema Completo D·E·F (Maps + Web CRO + IA 24/7)')">🚀 Sistema Completo (Maps + Web CRO + IA)</button>
+                <button type="button" class="chip-btn" onclick="selectGoal(this, 'Dominar Top 3 en Google Maps y ChatGPT')">📍 Salir Top 3 en Google Maps e IA</button>
+                <button type="button" class="chip-btn" onclick="selectGoal(this, 'Nueva Web CRO de Alta Conversión')">💻 Web CRO que convierta visitas en citas</button>
+                <button type="button" class="chip-btn" onclick="selectGoal(this, 'Asistente IA 24/7 en WhatsApp, Voz y Agenda')">🤖 Recepción IA 24/7 y Automatización</button>
+              </div>
+              <input type="hidden" name="objetivo" id="input-goal" value="Ecosistema Completo D·E·F (Maps + Web CRO + IA 24/7)" />
+            </div>
+
+            <!-- 3. NOMBRE DEL CENTRO Y CIUDAD -->
+            <div class="grid-2 field-group">
+              <div>
+                <label class="field-label" for="input-business">Nombre del Centro / Clínica / Empresa <span class="req">*</span></label>
+                <input
+                  id="input-business"
+                  name="centro_empresa"
+                  type="text"
+                  class="input-ctrl"
+                  required
+                  placeholder="Ej. Clínica Dental Velázquez"
+                />
+              </div>
+              <div>
+                <label class="field-label" for="input-city">Ciudad y Código Postal / Zona <span class="req">*</span></label>
+                <input
+                  id="input-city"
+                  name="ciudad_zona"
+                  type="text"
+                  class="input-ctrl"
+                  required
+                  placeholder="Ej. Madrid (28001) / Valencia"
+                />
+              </div>
+            </div>
+
+            <!-- 4. NOMBRE DE CONTACTO Y CARGO -->
+            <div class="grid-2 field-group">
+              <div>
+                <label class="field-label" for="input-name">Tu Nombre y Apellidos <span class="req">*</span></label>
+                <input
+                  id="input-name"
+                  name="nombre_contacto"
+                  type="text"
+                  class="input-ctrl"
+                  required
+                  placeholder="Ej. Dra. María Gómez"
+                />
+              </div>
+              <div>
+                <label class="field-label" for="input-role">Tu Cargo <span class="req">*</span></label>
+                <select id="input-role" name="cargo" class="select-ctrl" required>
+                  <option value="Propietario/a · Socio/a Fundador/a">Propietario/a · Socio/a Fundador/a</option>
+                  <option value="Director/a Médico/a o de Clínica">Director/a de Clínica o Centro</option>
+                  <option value="CEO / Dirección General">CEO / Dirección General</option>
+                  <option value="Dirección Comercial / Marketing / Operaciones">Dirección Comercial / Marketing</option>
+                  <option value="Responsable de Recepción / Admisiones">Responsable de Admisiones / Recepción</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- 5. WHATSAPP Y EMAIL -->
+            <div class="grid-2 field-group">
+              <div>
+                <label class="field-label" for="input-phone">WhatsApp Directo (Para enviarte el informe) <span class="req">*</span></label>
+                <input
+                  id="input-phone"
+                  name="whatsapp"
+                  type="tel"
+                  class="input-ctrl"
+                  required
+                  placeholder="+34 600 000 000"
+                />
+              </div>
+              <div>
+                <label class="field-label" for="input-email">Correo Electrónico Profesional <span class="req">*</span></label>
+                <input
+                  id="input-email"
+                  name="email"
+                  type="email"
+                  class="input-ctrl"
+                  required
+                  placeholder="direccion@tucentro.com"
+                />
+              </div>
+            </div>
+
+            <!-- 6. WEB / GOOGLE MAPS Y VOLUMEN -->
+            <div class="grid-2 field-group">
+              <div>
+                <label class="field-label" for="input-web">Web actual o enlace de Google Maps / Instagram</label>
+                <input
+                  id="input-web"
+                  name="web_o_maps"
+                  type="text"
+                  class="input-ctrl"
+                  placeholder="Ej. www.miclinica.es o nombre en Maps"
+                />
+              </div>
+              <div>
+                <label class="field-label" for="input-team">Tamaño del centro / equipo</label>
+                <select id="input-team" name="tamano_equipo" class="select-ctrl">
+                  <option value="2 a 5 profesionales / gabinetes">2 a 5 profesionales / gabinetes</option>
+                  <option value="Más de 5 profesionales / multi-sede">Más de 5 profesionales / multi-sede</option>
+                  <option value="1 profesional (consulta individual)">1 profesional (consulta individual)</option>
+                  <option value="Corporativo / Franquicia / Red de centros">Red de centros / Corporativo</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- 7. NOTAS ADICIONALES -->
+            <div class="field-group">
+              <label class="field-label" for="input-notes">¿Qué te gustaría mejorar o qué problema notas hoy en tu captación o recepción? (Opcional)</label>
+              <textarea
+                id="input-notes"
+                name="notas"
+                class="textarea-ctrl"
+                placeholder="Ej. Queremos captar más primeras visitas de implantes/ortodoncia, mejorar nuestra posición en Google Maps o no perder mensajes fuera de horario..."
+              ></textarea>
+            </div>
+
+            <label class="privacy-row">
+              <input type="checkbox" required checked />
+              <span>
+                Acepto que el equipo de ingeniería de <b>YDOIA</b> analice los datos públicos de visibilidad de mi negocio y me contacte para entregarme el Dossier de Auditoría 360° bajo cumplimiento estricto de RGPD (Art. 28) / LFPDPPP.
+              </span>
+            </label>
+
+            <button type="submit" id="submit-btn" class="submit-btn">
+              <span>Solicitar mi Auditoría 360° Gratuita ahora</span>
+              <span>→</span>
+            </button>
+          </form>
+        </div>
+
+        <!-- PANTALLA DE CONFIRMACIÓN TRAS ENVÍO -->
+        <div id="success-container" class="success-box">
+          <div class="ok-icon">✓</div>
+          <span class="step-badge" style="background: rgba(13,122,67,0.12); color: #0d7a43;">Solicitud registrada con éxito</span>
+          <h3 style="margin-top: 12px;">¡Recibido! Ya hemos iniciado tu Auditoría YDOIA 360°.</h3>
+          <p class="sub" style="margin-bottom: 12px;">
+            Nuestro equipo de ingeniería está procesando la huella digital de tu centro en Google Maps, motores de IA y conversión web.
+          </p>
+
+          <div class="summary-card" id="summary-box"></div>
+
+          <p style="font-size: 13.5px; color: #3c4248; font-weight: 600;">
+            ¿Quieres acelerar la entrega prioritaria de tu informe hoy mismo? Pulsa debajo para abrir confirmación directa en WhatsApp o correo:
+          </p>
+
+          <div class="action-stack">
+            <a id="wa-direct-link" href="#" target="_blank" rel="noopener" class="wa-btn">
+              <span>💬 Confirmar prioridad por WhatsApp ahora</span>
+            </a>
+            <a id="mailto-fallback-link" href="#" class="secondary-btn">
+              <span>✉️ Enviar copia de respaldo por Email</span>
+            </a>
+            <button type="button" class="secondary-btn" style="background: transparent; color: var(--muted-d); border: 1px solid var(--line-d);" onclick="resetAuditForm()">
+              Enviar los datos de otro centro
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INSIGNIAS OFICIALES DE AUDITORÍA Y NORMATIVA -->
+    <section class="seal-strip" aria-label="Certificaciones y cumplimiento normativo">
+      <div class="seal-card">
+        <div class="seal-emblem">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="9.5" stroke="currentColor" stroke-width="1.3" stroke-dasharray="1.5 2.6" />
+            <path d="M12 6.5l1.1 2.3 2.5.3-1.8 1.7.4 2.5-2.2-1.2-2.2 1.2.4-2.5-1.8-1.7 2.5-.3L12 6.5z" stroke="#FDC844" stroke-width="1.3" fill="rgba(253,200,68,0.18)" />
+          </svg>
+        </div>
+        <div>
+          <strong>EU AI Act · Art. 50</strong>
+          <span>European AI Office</span>
+        </div>
+      </div>
+
+      <div class="seal-card">
+        <div class="seal-emblem">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <path d="M12 2.5L4.5 5.8v5.7c0 5.1 3.2 9.7 7.5 11 4.3-1.3 7.5-5.9 7.5-11V5.8L12 2.5z" stroke="currentColor" stroke-width="1.6" fill="rgba(1,76,107,0.35)" />
+            <path d="M9.2 12.2l2 2 3.8-4" stroke="#5fd38d" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </div>
+        <div>
+          <strong>RGPD · Art. 28</strong>
+          <span>AEPD & Privacidad UE</span>
+        </div>
+      </div>
+
+      <div class="seal-card">
+        <div class="seal-emblem">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5" />
+            <path d="M12 7v10M7 12h10" stroke="#FDC844" stroke-width="2" stroke-linecap="round" />
+          </svg>
+        </div>
+        <div>
+          <strong>COFEPRIS & LFPDPPP</strong>
+          <span>Normativa Salud México</span>
+        </div>
+      </div>
+
+      <div class="seal-card">
+        <div class="seal-emblem">
+          <svg width="24" height="16" viewBox="0 0 36 24" fill="none">
+            <path d="M8.5 19C4.9 19 2 16 2 12C2 8 5 5 8.5 5C12.2 5 15.2 8.8 18 13C20.8 8.8 23.8 5 27.5 5C31 5 34 8 34 12C34 16 31.1 19 27.5 19C24.2 19 21.5 16.2 18 11C14.5 16.2 11.8 19 8.5 19Z" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" />
+          </svg>
+        </div>
+        <div>
+          <strong>Meta Cloud API</strong>
+          <span>Official Tech Provider</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    let currentCountry = 'es';
+
+    function setCountry(c) {
+      currentCountry = c;
+      document.getElementById('btn-es').classList.toggle('active', c === 'es');
+      document.getElementById('btn-mx').classList.toggle('active', c === 'mx');
+
+      const badge = document.getElementById('region-badge');
+      const cityInput = document.getElementById('input-city');
+      const phoneInput = document.getElementById('input-phone');
+
+      if (c === 'mx') {
+        badge.textContent = '🇲🇽 Operativa México · Paso Único';
+        cityInput.placeholder = 'Ej. CDMX (Polanco) / Monterrey / Guadalajara';
+        phoneInput.placeholder = '+52 55 0000 0000';
+      } else {
+        badge.textContent = '🇪🇸 Operativa España · Paso Único';
+        cityInput.placeholder = 'Ej. Madrid (28001) / Valencia / Barcelona';
+        phoneInput.placeholder = '+34 600 000 000';
+      }
+    }
+
+    function selectSector(btn, val) {
+      document.querySelectorAll('#sector-chips .chip-btn').forEach((b) => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('input-sector').value = val;
+    }
+
+    function selectGoal(btn, val) {
+      document.querySelectorAll('#goal-chips .chip-btn').forEach((b) => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('input-goal').value = val;
+    }
+
+    // Permitir pre-seleccionar el closer o referencia por parámetro URL (?ref=Cristina o ?vertical=dental)
+    const urlParams = new URLSearchParams(window.location.search);
+    const refParam = urlParams.get('ref') || urlParams.get('closer') || 'Directo';
+
+    async function handleAuditSubmit(e) {
+      e.preventDefault();
+      const btn = document.getElementById('submit-btn');
+      btn.disabled = true;
+      btn.innerHTML = '<span>Procesando solicitud de auditoría...</span>';
+
+      const payload = {
+        fecha: new Date().toLocaleString('es-ES', { timeZone: 'Europe/Madrid' }),
+        pais: currentCountry === 'mx' ? 'México' : 'España',
+        sector: document.getElementById('input-sector').value,
+        objetivo: document.getElementById('input-goal').value,
+        centro_empresa: document.getElementById('input-business').value.trim(),
+        ciudad_zona: document.getElementById('input-city').value.trim(),
+        nombre_contacto: document.getElementById('input-name').value.trim(),
+        cargo: document.getElementById('input-role').value,
+        whatsapp: document.getElementById('input-phone').value.trim(),
+        email: document.getElementById('input-email').value.trim(),
+        web_o_maps: document.getElementById('input-web').value.trim() || 'No especificada',
+        tamano_equipo: document.getElementById('input-team').value,
+        notas: document.getElementById('input-notes').value.trim() || 'Sin notas adicionales',
+        referencia: refParam
+      };
+
+      const tgText =
+        `🚨 *NUEVA SOLICITUD DE AUDITORÍA 360° (YDOIA)*\n\n` +
+        `🏢 *Centro / Empresa:* ${payload.centro_empresa}\n` +
+        `🏷️ *Sector:* ${payload.sector}\n` +
+        `📍 *Ciudad / Zona:* ${payload.ciudad_zona} (${payload.pais})\n` +
+        `👤 *Contacto:* ${payload.nombre_contacto} (${payload.cargo})\n` +
+        `📱 *WhatsApp:* ${payload.whatsapp}\n` +
+        `✉️ *Email:* ${payload.email}\n` +
+        `🌐 *Web / Maps:* ${payload.web_o_maps}\n` +
+        `👥 *Tamaño:* ${payload.tamano_equipo}\n` +
+        `🎯 *Prioridad:* ${payload.objetivo}\n` +
+        `📝 *Notas:* ${payload.notas}\n` +
+        `🔗 *Origen / Ref:* ${payload.referencia}`;
+
+      // 1. Notificación inmediata al canal operativo de YDOIA en Telegram
+      try {
+        await fetch('https://api.telegram.org/bot8938988394:AAFHhVME6SFjrxuR5nXL0K4af31PBIRu5s4/sendMessage', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            chat_id: '1257468863',
+            text: tgText,
+            parse_mode: 'Markdown'
+          })
+        });
+      } catch (err) {
+        console.warn('Telegram notification fallback:', err);
+      }
+
+      // 2. Envío por correo a contacto@ydoia.com (FormSubmit AJAX)
+      try {
+        await fetch('https://formsubmit.co/ajax/contacto@ydoia.com', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify({
+            _subject: `Nueva Auditoría 360° YDOIA — ${payload.centro_empresa} (${payload.ciudad_zona})`,
+            _template: 'table',
+            ...payload
+          })
+        });
+      } catch (err) {
+        console.warn('Email notification fallback:', err);
+      }
+
+      // 3. Preparar enlaces directos de confirmación (WhatsApp y Email)
+      const cleanSummary =
+        `Hola equipo YDOIA, acabo de solicitar la Auditoría Estratégica 360° para *${payload.centro_empresa}* (${payload.sector}) en *${payload.ciudad_zona}*.\n\n` +
+        `• Contacto: ${payload.nombre_contacto} (${payload.cargo})\n` +
+        `• Web / Maps: ${payload.web_o_maps}\n` +
+        `• Prioridad: ${payload.objetivo}\n` +
+        `• WhatsApp de respuesta: ${payload.whatsapp}`;
+
+      const mailSubject = encodeURIComponent(`Solicitud Auditoría 360° YDOIA - ${payload.centro_empresa}`);
+      const mailBody = encodeURIComponent(cleanSummary.replace(/\*/g, ''));
+      document.getElementById('mailto-fallback-link').href = `mailto:contacto@ydoia.com?subject=${mailSubject}&body=${mailBody}`;
+
+      const waText = encodeURIComponent(cleanSummary);
+      document.getElementById('wa-direct-link').href = `https://wa.me/34951870547?text=${waText}`;
+
+      // 4. Mostrar resumen en pantalla
+      document.getElementById('summary-box').innerHTML = `
+        <div><b>Centro / Empresa:</b> ${payload.centro_empresa} (${payload.sector})</div>
+        <div><b>Ubicación:</b> ${payload.ciudad_zona} · ${payload.pais}</div>
+        <div><b>Responsable:</b> ${payload.nombre_contacto} (${payload.cargo})</div>
+        <div><b>WhatsApp / Email:</b> ${payload.whatsapp} · ${payload.email}</div>
+        <div><b>Prioridad:</b> ${payload.objetivo}</div>
+      `;
+
+      document.getElementById('form-container').style.display = 'none';
+      document.getElementById('success-container').classList.add('show');
+      btn.disabled = false;
+      btn.innerHTML = '<span>Solicitar mi Auditoría 360° Gratuita ahora</span><span>→</span>';
+    }
+
+    function resetAuditForm() {
+      document.getElementById('audit-form').reset();
+      document.getElementById('success-container').classList.remove('show');
+      document.getElementById('form-container').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
